@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/player"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/player_background">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/player_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Flux and Flow"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/player_song_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player_song_title"
+            android:layout_marginLeft="5dp"
+            android:text="Siberia - Lights"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/player_song_playlist"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/button_playlist"
+            android:background="@null"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/art_deck"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header">
+
+        <ImageView
+            android:id="@+id/player_song_art"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/art"/>
+
+        <ImageButton
+            android:id="@+id/player_song_repeat"
+            android:scaleType="centerCrop"
+            android:layout_alignBottom="@+id/player_song_art"
+            android:src="@drawable/button_repeat"
+            android:background="@null"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_width="40dp"/>
+
+        <ImageButton
+            android:id="@+id/player_song_shuffle"
+            android:scaleType="fitCenter"
+            android:layout_alignBottom="@+id/player_song_art"
+            android:layout_alignRight="@+id/player_song_art"
+            android:layout_margin="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/button_shuffle"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/deck"
+        android:layout_alignBottom="@+id/seek"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/player_song_prev"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/button_prev"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/player_song_playback"
+            android:scaleType="fitCenter"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/button_play"
+            android:background="@null"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/player_song_next"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/button_next"
+            android:layout_marginLeft="25dp"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_alignBottom="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/player_song_duration_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="0:00"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/player_song_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+            android:text="3:10"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@id/seek"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:progressDrawable="@drawable/seekbar_bgr" />
+
+</RelativeLayout>
